@@ -22,6 +22,15 @@ void fill(int**& matr, int n) {
 	}
 }
 
+void fill_input(int**& matr, int n) {
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			cout << "Enter the [" << i << "][" << j << "] element: ";
+			cin >> matr[i][j];
+		}
+	}
+}
+
 void pretty_output(int n) {
 	cout << "-";
 
@@ -97,7 +106,8 @@ int main() {
 
 	int** matr;
 	allocate(matr, n);
-	fill(matr, n);
+	// fill(matr, n);
+	fill_input(matr, n);
 	print(matr, n);
 
 	cout << "\nThe determinant equals to " << det(matr, n) << endl;
